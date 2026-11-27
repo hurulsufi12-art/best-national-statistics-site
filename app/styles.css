@@ -1,0 +1,62 @@
+/* KAVSTAT — National Statistics of Kavaria. Navy + teal + gold, serif display. */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1c2b38; background: #eef2f5; line-height: 1.5; }
+h1, h2 { font-family: Georgia, "Times New Roman", serif; color: #12324f; }
+h1 { font-size: 1.7rem; margin: 0.2rem 0 0.1rem; }
+h2 { font-size: 1.15rem; margin: 0 0 0.6rem; }
+.topbar { background: #12324f; color: #fff; padding: 0.7rem 1.4rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 0.7rem; }
+.brand-mark { background: #c9a227; color: #12324f; font-weight: 800; font-size: 1.1rem; width: 2.4rem; height: 2.4rem; display: inline-flex; align-items: center; justify-content: center; border-radius: 0.3rem; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+.brand-text strong { font-size: 1.25rem; letter-spacing: 0.06em; }
+.brand-text span { font-size: 0.8rem; color: #bcd0de; }
+.topbar-note { margin: 0; font-size: 0.85rem; color: #bcd0de; }
+.layout { display: flex; max-width: 1180px; margin: 0 auto; align-items: flex-start; }
+nav { width: 190px; flex: none; padding: 1rem 0.6rem; display: flex; flex-direction: column; gap: 0.15rem; position: sticky; top: 0; }
+nav a { display: block; padding: 0.55rem 0.8rem; border-radius: 0.35rem; color: #23465e; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
+nav a:hover { background: #dde7ee; }
+nav a.active { background: #12324f; color: #fff; }
+main { flex: 1; min-width: 0; padding: 1rem 1.2rem 2rem; }
+.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin: 0.9rem 0; }
+.kpi { background: #fff; border-top: 4px solid #0e7c7b; border-radius: 0.4rem; padding: 0.8rem 1rem; box-shadow: 0 1px 3px rgba(18, 50, 79, 0.12); }
+.kpi-label { margin: 0; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; color: #5b6b7a; }
+.kpi-value { margin: 0.15rem 0 0; font-size: 1.7rem; font-weight: 800; color: #12324f; font-family: Georgia, serif; }
+.kpi-unit { font-size: 0.95rem; font-weight: 600; color: #5b6b7a; }
+.kpi-year { margin: 0.1rem 0 0; font-size: 0.82rem; color: #0e7c7b; font-weight: 600; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin: 0.8rem 0; }
+.card { background: #fff; border-radius: 0.4rem; padding: 1rem 1.1rem; box-shadow: 0 1px 3px rgba(18, 50, 79, 0.12); margin: 0.8rem 0; }
+.two-col .card { margin: 0; }
+.src { color: #5b6b7a; font-size: 0.88rem; margin: 0.1rem 0 0.8rem; }
+.note { background: #fff8e1; border-left: 4px solid #c9a227; padding: 0.7rem 1rem; border-radius: 0.3rem; font-size: 0.95rem; }
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+th, td { text-align: left; padding: 0.45rem 0.5rem; border-bottom: 1px solid #e2e8ee; }
+th { color: #12324f; border-bottom: 2px solid #12324f; }
+tbody tr:hover { background: #f2f7f8; }
+.controls { display: flex; gap: 0.8rem; align-items: end; flex-wrap: wrap; margin-bottom: 0.7rem; }
+.controls label { font-size: 0.9rem; font-weight: 600; }
+.controls input { padding: 0.4rem 0.6rem; border: 1px solid #b9c6d0; border-radius: 0.3rem; font-size: 0.95rem; margin-left: 0.3rem; }
+.controls button, button { padding: 0.45rem 0.9rem; background: #12324f; color: #fff; border: none; border-radius: 0.3rem; font-size: 0.92rem; cursor: pointer; }
+.controls button:hover { background: #0e7c7b; }
+.releases { list-style: none; margin: 0; padding: 0; }
+.releases li { display: flex; gap: 0.7rem; align-items: baseline; padding: 0.55rem 0; border-bottom: 1px solid #eef2f5; flex-wrap: wrap; }
+.releases li:last-child { border-bottom: none; }
+.tag { background: #e3f0ef; color: #0e7c7b; font-size: 0.75rem; font-weight: 700; padding: 0.15rem 0.5rem; border-radius: 1rem; text-transform: uppercase; }
+.date { margin-left: auto; color: #5b6b7a; font-size: 0.85rem; }
+.methods { margin: 0; padding-left: 1.2rem; }
+.methods li { margin: 0.4rem 0; }
+footer { background: #12324f; color: #bcd0de; padding: 1rem 1.4rem; font-size: 0.88rem; }
+footer p { margin: 0; max-width: 1180px; margin-left: auto; margin-right: auto; }
+footer strong { color: #fff; }
+@media (max-width: 900px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .two-col { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .layout { flex-direction: column; }
+  nav { width: 100%; flex-direction: row; overflow-x: auto; position: static; padding: 0.5rem; }
+  nav a { white-space: nowrap; }
+  .kpi-grid { grid-template-columns: 1fr 1fr; }
+  .kpi-value { font-size: 1.35rem; }
+  h1 { font-size: 1.35rem; }
+  main { padding: 0.7rem; }
+}
